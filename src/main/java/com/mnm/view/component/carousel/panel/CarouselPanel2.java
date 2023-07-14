@@ -4,44 +4,11 @@
 package com.mnm.view.component.carousel.panel;
 
 import com.mnm.view.component.RoundedJPanel;
-import java.awt.Component;
-import javax.swing.JScrollPane;
 
 public class CarouselPanel2 extends RoundedJPanel {
     
     public CarouselPanel2() {
         initComponents();
-        removeListeners(getComponents());
-    }
-    
-    private void removeListeners(Component comps []) {
-        for (Component component: comps) {
-            if (component.getClass() == RoundedJPanel.class) {
-                removeListeners(((RoundedJPanel) component).getComponents());
-            } else if (component.getClass() == JScrollPane.class) {
-                // Remuevo los listeners del mouse para el view
-                Component view = ((JScrollPane) component).getViewport().getView();
-                while(view.getMouseListeners().length > 0) {
-                    view.removeMouseListener(view.getMouseListeners()[0]);
-                }
-                while(view.getMouseMotionListeners().length > 0) {
-                    view.removeMouseMotionListener(view.getMouseMotionListeners()[0]);
-                }
-                while(view.getMouseWheelListeners().length > 0) {
-                    view.removeMouseWheelListener(view.getMouseWheelListeners()[0]);
-                }
-                // Remuevo los listeners del mouse del JScrollPane
-                while(component.getMouseListeners().length > 0) {
-                    component.removeMouseListener(component.getMouseListeners()[0]);
-                }
-                while(component.getMouseMotionListeners().length > 0) {
-                    component.removeMouseMotionListener(component.getMouseMotionListeners()[0]);
-                }
-                while(component.getMouseWheelListeners().length > 0) {
-                    component.removeMouseWheelListener(component.getMouseWheelListeners()[0]);
-                }
-            }
-        }
     }
     
     @SuppressWarnings("unchecked")
