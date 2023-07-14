@@ -21,7 +21,7 @@ public class Example extends javax.swing.JFrame {
 
         containerPrincipal = new com.mnm.view.component.RoundedJPanel();
         containerCentral = new com.mnm.view.component.RoundedJPanel();
-        containerCarousel = new com.mnm.view.component.carousel.RoundedCarouselJPanel();
+        containerCarousel = new com.mnm.view.component.carousel.Carousel();
         containerForm = new com.mnm.view.component.RoundedJPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -73,7 +73,7 @@ public class Example extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.mnm.view.component.carousel.RoundedCarouselJPanel containerCarousel;
+    private com.mnm.view.component.carousel.Carousel containerCarousel;
     private com.mnm.view.component.RoundedJPanel containerCentral;
     private com.mnm.view.component.RoundedJPanel containerForm;
     private com.mnm.view.component.RoundedJPanel containerPrincipal;

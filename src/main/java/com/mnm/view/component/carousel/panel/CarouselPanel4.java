@@ -5,9 +5,9 @@ package com.mnm.view.component.carousel.panel;
 
 import com.mnm.view.component.RoundedJPanel;
 
-public class Carousel3 extends RoundedJPanel {
+public class CarouselPanel4 extends RoundedJPanel {
     
-    public Carousel3() {
+    public CarouselPanel4() {
         initComponents();
     }
     

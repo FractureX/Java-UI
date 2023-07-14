@@ -4,10 +4,10 @@
 package com.mnm.view.component.carousel;
 
 import com.mnm.view.component.RoundedJPanel;
-import com.mnm.view.component.carousel.panel.Carousel1;
-import com.mnm.view.component.carousel.panel.Carousel2;
-import com.mnm.view.component.carousel.panel.Carousel3;
-import com.mnm.view.component.carousel.panel.Carousel4;
+import com.mnm.view.component.carousel.panel.CarouselPanel1;
+import com.mnm.view.component.carousel.panel.CarouselPanel2;
+import com.mnm.view.component.carousel.panel.CarouselPanel3;
+import com.mnm.view.component.carousel.panel.CarouselPanel4;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Cursor;
@@ -26,7 +26,7 @@ import javax.swing.JScrollPane;
 import javax.swing.SwingUtilities;
 import org.netbeans.lib.awtextra.AbsoluteConstraints;
 
-public final class RoundedCarouselJPanel extends RoundedJPanel {
+public final class Carousel extends RoundedJPanel {
     
     private int MNM_widthPerPanel = 300;
     private int MNM_dotSeparation = 10;
@@ -40,13 +40,13 @@ public final class RoundedCarouselJPanel extends RoundedJPanel {
     int dragInitialPointX;
     int dragCurrentPointX;
 
-    public RoundedCarouselJPanel() {
+    public Carousel() {
         initComponents();
         setCursor(new Cursor(java.awt.Cursor.HAND_CURSOR));
-        addRoundedJPanel(new Carousel1());
-        addRoundedJPanel(new Carousel2());
-        addRoundedJPanel(new Carousel3());
-        addRoundedJPanel(new Carousel4());
+        addRoundedJPanel(new CarouselPanel1());
+        addRoundedJPanel(new CarouselPanel2());
+        addRoundedJPanel(new CarouselPanel3());
+        addRoundedJPanel(new CarouselPanel4());
         addEvents();
     }
     
@@ -76,7 +76,6 @@ public final class RoundedCarouselJPanel extends RoundedJPanel {
             @Override
             public void mouseReleased(MouseEvent e) {
                 if (SwingUtilities.isLeftMouseButton(e)) {
-                    // Calcular el nuevo currentIndex
                     RoundedJPanel currentPanel = panels.get(currentIndex);
                     currentIndex -= (currentPanel.getLocation().x / getWidth());
                     if (currentIndex < 0) {currentIndex = 0;}
@@ -89,7 +88,7 @@ public final class RoundedCarouselJPanel extends RoundedJPanel {
                         }
                     }
                     panels.get(currentIndex).setLocation(0, 0);
-                    setLayout(new javax.swing.BoxLayout(RoundedCarouselJPanel.this, javax.swing.BoxLayout.LINE_AXIS));
+                    setLayout(new javax.swing.BoxLayout(Carousel.this, javax.swing.BoxLayout.LINE_AXIS));
                     getTopLevelAncestor().revalidate();
                     getTopLevelAncestor().repaint();
                     isDragging = false;
@@ -142,41 +141,41 @@ public final class RoundedCarouselJPanel extends RoundedJPanel {
             @Override
             public void mouseWheelMoved(MouseWheelEvent e) {
                 if (!isDragging) {
+                    boolean cambiarPanel = false;
                     if (e.getWheelRotation() < 0) {
                         // Arriba <- Izquierda
                         if (currentIndex > 0) {
                             currentIndex--;
-                            removeAll();
-                            add(panels.get(currentIndex));
-                            getTopLevelAncestor().revalidate();
-                            getTopLevelAncestor().repaint();
+                            cambiarPanel = true;
                         }
                     } else {
                         // Abajo -> Derecha
                         if (currentIndex < (totalPanels - 1)) {
                             currentIndex++;
-                            removeAll();
-                            add(panels.get(currentIndex));
-                            getTopLevelAncestor().revalidate();
-                            getTopLevelAncestor().repaint();
+                            cambiarPanel = true;
                         }
+                    }
+                    if (cambiarPanel) {
+                        removeAll();
+                        add(panels.get(currentIndex));
+                        getTopLevelAncestor().revalidate();
+                        getTopLevelAncestor().repaint();
                     }
                 }
             }
         };
-        
         addMouseListener(mouseListenerEvent);
         addMouseMotionListener(mouseMotionListener);
         addMouseWheelListener(mouseWheelListener);
         for (Component comp : panels) {
-            addEventsInside("addEvents", ((JPanel) comp).getComponents(), mouseListenerEvent, mouseMotionListener, mouseWheelListener);
+            addEventsInside(((JPanel) comp).getComponents(), mouseListenerEvent, mouseMotionListener, mouseWheelListener);
         }
     }
     
-    private void addEventsInside(String desde, Component comps[], MouseAdapter mouseListenerEvent, MouseMotionAdapter mouseMotionListener, MouseWheelListener mouseWheelListener) {
+    private void addEventsInside(Component comps[], MouseAdapter mouseListenerEvent, MouseMotionAdapter mouseMotionListener, MouseWheelListener mouseWheelListener) {
         for (Component comp : comps) {
             if (comp.getClass().getSuperclass() == RoundedJPanel.class || comp.getClass().getSuperclass() == JPanel.class) {
-                addEventsInside("addEventsInside", ((JPanel) comp).getComponents(), mouseListenerEvent, mouseMotionListener, mouseWheelListener);
+                addEventsInside(((JPanel) comp).getComponents(), mouseListenerEvent, mouseMotionListener, mouseWheelListener);
             } else if (comp.getClass() == JScrollPane.class) {
                 Component view = ((JScrollPane) comp).getViewport().getView();
                 view.addMouseListener(mouseListenerEvent);
@@ -207,8 +206,6 @@ public final class RoundedCarouselJPanel extends RoundedJPanel {
                 } else {
                     g2d.setColor(Color.white.darker());
                 }
-                //MNM_dotSeparation = 10;
-                //MNM_dotSize = 10;
                 int centro = (getWidth() / 2);
                 int totalWidth = (MNM_dotSize * totalPanels) + (MNM_dotSeparation * (totalPanels - 1));
                 int x = (centro - (totalWidth / 2)) + ((i * (MNM_dotSize)) + (i * (MNM_dotSeparation)));

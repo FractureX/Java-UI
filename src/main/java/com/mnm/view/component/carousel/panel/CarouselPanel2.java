@@ -7,9 +7,9 @@ import com.mnm.view.component.RoundedJPanel;
 import java.awt.Component;
 import javax.swing.JScrollPane;
 
-public class Carousel2 extends RoundedJPanel {
+public class CarouselPanel2 extends RoundedJPanel {
     
-    public Carousel2() {
+    public CarouselPanel2() {
         initComponents();
         removeListeners(getComponents());
     }

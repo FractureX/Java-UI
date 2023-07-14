@@ -20,10 +20,6 @@ public class RoundedJLabel extends JLabel {
     private Icon MNM_icon = null;
     private Color MNM_backgroundColor = new Color(255, 255, 255);
     
-    public RoundedJLabel() {
-        
-    }
-    
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
