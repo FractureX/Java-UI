@@ -70,7 +70,6 @@ public final class RoundedCarouselJPanel extends RoundedJPanel {
                     }
                     isDragging = true;
                     dragInitialPointX = e.getLocationOnScreen().x;
-                    System.out.println("getSize(): " + getSize().toString());
                 }
             }
 
@@ -131,7 +130,6 @@ public final class RoundedCarouselJPanel extends RoundedJPanel {
                                 currentPanel.setLocation(x, 0);
                             }
                         } else {
-                            System.out.println("Aquí");
                             currentPanel.setLocation(x, 0);
                         }
                         xLocationPerPanel += MNM_widthPerPanel;
@@ -223,7 +221,6 @@ public final class RoundedCarouselJPanel extends RoundedJPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setEnabled(false);
         setMaximumSize(new java.awt.Dimension(300, 500));
         setMinimumSize(new java.awt.Dimension(300, 500));
         setPreferredSize(new java.awt.Dimension(300, 500));

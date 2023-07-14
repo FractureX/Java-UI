@@ -114,7 +114,7 @@
         <Component class="com.mnm.view.component.RoundedJLabel" name="roundedJLabelIcon1">
           <Properties>
             <Property name="MNM_icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/shaquille - copia.jpg"/>
+              <Image iconType="3" name="/img_persona.jpg"/>
             </Property>
           </Properties>
         </Component>

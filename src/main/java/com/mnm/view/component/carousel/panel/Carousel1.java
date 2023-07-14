@@ -69,7 +69,7 @@ public class Carousel1 extends RoundedJPanel {
         roundedJPanel1.setMNM_backgroundColor(new java.awt.Color(42, 43, 222));
         roundedJPanel1.setPreferredSize(new java.awt.Dimension(260, 147));
 
-        roundedJLabelIcon1.setMNM_icon(new javax.swing.ImageIcon(getClass().getResource("/shaquille - copia.jpg"))); // NOI18N
+        roundedJLabelIcon1.setMNM_icon(new javax.swing.ImageIcon(getClass().getResource("/img_persona.jpg"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
