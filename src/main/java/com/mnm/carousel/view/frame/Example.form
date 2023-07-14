@@ -63,20 +63,9 @@
             <Property name="alignment" type="int" value="0"/>
           </Layout>
           <SubComponents>
-            <Component class="com.mnm.carousel.view.component.carousel.Carousel" name="containerCarousel">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[300, 500]"/>
-                </Property>
-                <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[300, 500]"/>
-                </Property>
-              </Properties>
+            <Component class="com.mnm.carousel.view.component.Carousel" name="carousel1">
             </Component>
-            <Container class="com.mnm.carousel.view.component.RoundedJPanel" name="containerForm">
+            <Container class="com.mnm.carousel.view.component.RoundedJPanel" name="roundedJPanel1">
               <Properties>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[385, 500]"/>

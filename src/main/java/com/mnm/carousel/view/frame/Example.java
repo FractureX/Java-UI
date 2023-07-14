@@ -21,8 +21,8 @@ public class Example extends javax.swing.JFrame {
 
         containerPrincipal = new com.mnm.carousel.view.component.RoundedJPanel();
         containerCentral = new com.mnm.carousel.view.component.RoundedJPanel();
-        containerCarousel = new com.mnm.carousel.view.component.Carousel();
-        containerForm = new com.mnm.carousel.view.component.RoundedJPanel();
+        carousel1 = new com.mnm.carousel.view.component.Carousel();
+        roundedJPanel1 = new com.mnm.carousel.view.component.RoundedJPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -34,26 +34,22 @@ public class Example extends javax.swing.JFrame {
 
         containerCentral.setPreferredSize(new java.awt.Dimension(700, 510));
         containerCentral.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
+        containerCentral.add(carousel1);
 
-        containerCarousel.setBackground(new java.awt.Color(255, 255, 255));
-        containerCarousel.setMaximumSize(new java.awt.Dimension(300, 500));
-        containerCarousel.setMinimumSize(new java.awt.Dimension(300, 500));
-        containerCentral.add(containerCarousel);
+        roundedJPanel1.setPreferredSize(new java.awt.Dimension(385, 500));
 
-        containerForm.setPreferredSize(new java.awt.Dimension(385, 500));
-
-        javax.swing.GroupLayout containerFormLayout = new javax.swing.GroupLayout(containerForm);
-        containerForm.setLayout(containerFormLayout);
-        containerFormLayout.setHorizontalGroup(
-            containerFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout roundedJPanel1Layout = new javax.swing.GroupLayout(roundedJPanel1);
+        roundedJPanel1.setLayout(roundedJPanel1Layout);
+        roundedJPanel1Layout.setHorizontalGroup(
+            roundedJPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 385, Short.MAX_VALUE)
         );
-        containerFormLayout.setVerticalGroup(
-            containerFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        roundedJPanel1Layout.setVerticalGroup(
+            roundedJPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 500, Short.MAX_VALUE)
         );
 
-        containerCentral.add(containerForm);
+        containerCentral.add(roundedJPanel1);
 
         containerPrincipal.add(containerCentral, new java.awt.GridBagConstraints());
 
@@ -73,9 +69,9 @@ public class Example extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.mnm.carousel.view.component.Carousel containerCarousel;
+    private com.mnm.carousel.view.component.Carousel carousel1;
     private com.mnm.carousel.view.component.RoundedJPanel containerCentral;
-    private com.mnm.carousel.view.component.RoundedJPanel containerForm;
     private com.mnm.carousel.view.component.RoundedJPanel containerPrincipal;
+    private com.mnm.carousel.view.component.RoundedJPanel roundedJPanel1;
     // End of variables declaration//GEN-END:variables
 }
