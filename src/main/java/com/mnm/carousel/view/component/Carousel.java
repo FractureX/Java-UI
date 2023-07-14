@@ -1,13 +1,9 @@
 /*
  * Proyecto M&M
  */
-package com.mnm.view.component.carousel;
+package com.mnm.carousel.view.component;
 
-import com.mnm.view.component.RoundedJPanel;
-import com.mnm.view.component.carousel.panel.CarouselPanel1;
-import com.mnm.view.component.carousel.panel.CarouselPanel2;
-import com.mnm.view.component.carousel.panel.CarouselPanel3;
-import com.mnm.view.component.carousel.panel.CarouselPanel4;
+import com.mnm.carousel.view.component.RoundedJPanel;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Cursor;

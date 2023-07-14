@@ -1,9 +1,9 @@
 /*
  * Proyecto M&M
  */
-package com.mnm.view.component.carousel.panel;
+package com.mnm.carousel.view.component;
 
-import com.mnm.view.component.RoundedJPanel;
+import com.mnm.carousel.view.component.RoundedJPanel;
 
 public class CarouselPanel1 extends RoundedJPanel {
     
@@ -16,8 +16,8 @@ public class CarouselPanel1 extends RoundedJPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        roundedJPanel1 = new com.mnm.view.component.RoundedJPanel();
-        roundedJLabelIcon1 = new com.mnm.view.component.RoundedJLabel();
+        roundedJPanel1 = new com.mnm.carousel.view.component.RoundedJPanel();
+        roundedJLabelIcon1 = new com.mnm.carousel.view.component.RoundedJLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -123,7 +123,7 @@ public class CarouselPanel1 extends RoundedJPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private com.mnm.view.component.RoundedJLabel roundedJLabelIcon1;
-    private com.mnm.view.component.RoundedJPanel roundedJPanel1;
+    private com.mnm.carousel.view.component.RoundedJLabel roundedJLabelIcon1;
+    private com.mnm.carousel.view.component.RoundedJPanel roundedJPanel1;
     // End of variables declaration//GEN-END:variables
 }

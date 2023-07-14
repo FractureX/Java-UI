@@ -1,13 +1,13 @@
 /*
  * Proyecto M&M
  */
-package com.mnm.view.component.carousel.panel;
+package com.mnm.carousel.view.component;
 
-import com.mnm.view.component.RoundedJPanel;
+import com.mnm.carousel.view.component.RoundedJPanel;
 
-public class CarouselPanel4 extends RoundedJPanel {
+public class CarouselPanel3 extends RoundedJPanel {
     
-    public CarouselPanel4() {
+    public CarouselPanel3() {
         initComponents();
     }
     

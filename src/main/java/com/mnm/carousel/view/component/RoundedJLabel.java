@@ -1,7 +1,7 @@
 /*
  * Proyecto M&M
  */
-package com.mnm.view.component;
+package com.mnm.carousel.view.component;
 
 import java.awt.AlphaComposite;
 import java.awt.Color;

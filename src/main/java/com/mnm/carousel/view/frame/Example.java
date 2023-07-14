@@ -1,7 +1,7 @@
 /*
  * Proyecto M&M
  */
-package com.mnm.view.frame;
+package com.mnm.carousel.view.frame;
 
 import java.awt.Color;
 import java.awt.Toolkit;
@@ -19,10 +19,10 @@ public class Example extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        containerPrincipal = new com.mnm.view.component.RoundedJPanel();
-        containerCentral = new com.mnm.view.component.RoundedJPanel();
-        containerCarousel = new com.mnm.view.component.carousel.Carousel();
-        containerForm = new com.mnm.view.component.RoundedJPanel();
+        containerPrincipal = new com.mnm.carousel.view.component.RoundedJPanel();
+        containerCentral = new com.mnm.carousel.view.component.RoundedJPanel();
+        containerCarousel = new com.mnm.carousel.view.component.Carousel();
+        containerForm = new com.mnm.carousel.view.component.RoundedJPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -73,9 +73,9 @@ public class Example extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.mnm.view.component.carousel.Carousel containerCarousel;
-    private com.mnm.view.component.RoundedJPanel containerCentral;
-    private com.mnm.view.component.RoundedJPanel containerForm;
-    private com.mnm.view.component.RoundedJPanel containerPrincipal;
+    private com.mnm.carousel.view.component.Carousel containerCarousel;
+    private com.mnm.carousel.view.component.RoundedJPanel containerCentral;
+    private com.mnm.carousel.view.component.RoundedJPanel containerForm;
+    private com.mnm.carousel.view.component.RoundedJPanel containerPrincipal;
     // End of variables declaration//GEN-END:variables
 }
