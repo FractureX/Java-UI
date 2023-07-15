@@ -15,6 +15,7 @@ import java.awt.event.ItemListener;
 import javax.swing.BorderFactory;
 import javax.swing.JRadioButton;
 import javax.swing.Timer;
+import javax.swing.border.Border;
 
 public class RoundedJRadioButton extends JRadioButton {
     
@@ -28,7 +29,7 @@ public class RoundedJRadioButton extends JRadioButton {
     private Color MNM_backgroundInactiveColor = new Color(255, 255, 255);
     
     private Timer timer;
-    private double timerTick = 50;
+    private double timerTick = 25;
     private int circleInternalSize = 5;
     private Color foregroundCurrentColor = new Color(0, 0, 0);
     private Color borderCurrentColor = new Color(215, 221, 230);
@@ -141,6 +142,11 @@ public class RoundedJRadioButton extends JRadioButton {
         g2d.setFont(getFont());
         g2d.setColor(foregroundCurrentColor);
         g2d.drawString(getText(), (MNM_margin + MNM_circleSize) + MNM_margin, (getHeight() + g2d.getFontMetrics().getAscent() - g2d.getFontMetrics().getDescent()) / 2);
+    }
+
+    @Override
+    public void setBorder(Border border) {
+        super.setBorder(BorderFactory.createEmptyBorder(MNM_margin, MNM_margin + MNM_circleSize, MNM_margin, MNM_margin));
     }
     
     @Override

@@ -16,8 +16,8 @@ import javax.swing.JLabel;
 
 public class RoundedJLabel extends JLabel {
     
-    private int MNM_arc = 10;
     private Icon MNM_icon = null;
+    private int MNM_arc = 10;
     private Color MNM_backgroundColor = new Color(255, 255, 255);
     
     @Override
@@ -41,7 +41,7 @@ public class RoundedJLabel extends JLabel {
             g2d.drawImage(img, 0, 0, null);
         }
     }
-    
+
     @Override
     public void setIcon(Icon icon) {
         super.setIcon(null);
@@ -55,20 +55,20 @@ public class RoundedJLabel extends JLabel {
         this.MNM_arc = MNM_arc;
     }
     
-    public Icon getMNM_icon() {
-        return MNM_icon;
-    }
-    
-    public void setMNM_icon(Icon MNM_icon) {
-        this.MNM_icon = MNM_icon;
-    }
-
     public Color getMNM_backgroundColor() {
         return MNM_backgroundColor;
     }
-
+    
     public void setMNM_backgroundColor(Color MNM_backgroundColor) {
         this.MNM_backgroundColor = MNM_backgroundColor;
+    }
+
+    public Icon getMNM_icon() {
+        return MNM_icon;
+    }
+
+    public void setMNM_icon(Icon MNM_icon) {
+        this.MNM_icon = MNM_icon;
     }
     
 }

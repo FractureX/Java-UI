@@ -19,11 +19,12 @@ public class Example extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         containerPrincipal = new com.mnm.view.component.RoundedJPanel();
         containerCentral = new com.mnm.view.component.RoundedJPanel();
         carousel1 = new com.mnm.carousel.view.component.Carousel();
         roundedJPanel1 = new com.mnm.view.component.RoundedJPanel();
-        roundedJRadioButton1 = new com.mnm.form.view.component.RoundedJRadioButton();
+        roundedJTextField1 = new com.mnm.form.view.component.RoundedJTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -39,24 +40,25 @@ public class Example extends javax.swing.JFrame {
 
         roundedJPanel1.setPreferredSize(new java.awt.Dimension(385, 500));
 
-        roundedJRadioButton1.setForeground(new java.awt.Color(51, 51, 51));
-        roundedJRadioButton1.setText("roundedJRadioButton1");
+        roundedJTextField1.setText("roundedJTextField1");
+        roundedJTextField1.setMNM_icon(new javax.swing.ImageIcon(getClass().getResource("/img_persona.jpg"))); // NOI18N
+        roundedJTextField1.setMNM_iconSize(25);
 
         javax.swing.GroupLayout roundedJPanel1Layout = new javax.swing.GroupLayout(roundedJPanel1);
         roundedJPanel1.setLayout(roundedJPanel1Layout);
         roundedJPanel1Layout.setHorizontalGroup(
             roundedJPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(roundedJPanel1Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(roundedJRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addGap(65, 65, 65)
+                .addComponent(roundedJTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(167, Short.MAX_VALUE))
         );
         roundedJPanel1Layout.setVerticalGroup(
             roundedJPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(roundedJPanel1Layout.createSequentialGroup()
-                .addGap(122, 122, 122)
-                .addComponent(roundedJRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(342, Short.MAX_VALUE))
+                .addGap(170, 170, 170)
+                .addComponent(roundedJTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(294, Short.MAX_VALUE))
         );
 
         containerCentral.add(roundedJPanel1);
@@ -79,10 +81,11 @@ public class Example extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
     private com.mnm.carousel.view.component.Carousel carousel1;
     private com.mnm.view.component.RoundedJPanel containerCentral;
     private com.mnm.view.component.RoundedJPanel containerPrincipal;
     private com.mnm.view.component.RoundedJPanel roundedJPanel1;
-    private com.mnm.form.view.component.RoundedJRadioButton roundedJRadioButton1;
+    private com.mnm.form.view.component.RoundedJTextField roundedJTextField1;
     // End of variables declaration//GEN-END:variables
 }
