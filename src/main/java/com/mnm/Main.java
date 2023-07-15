@@ -3,7 +3,7 @@
  */
 package com.mnm;
 
-import com.mnm.carousel.view.frame.Example;
+import com.mnm.view.frame.Example;
 
 public class Main {
     

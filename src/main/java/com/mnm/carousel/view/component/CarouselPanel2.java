@@ -3,7 +3,7 @@
  */
 package com.mnm.carousel.view.component;
 
-import com.mnm.carousel.view.component.RoundedJPanel;
+import com.mnm.view.component.RoundedJPanel;
 
 public class CarouselPanel2 extends RoundedJPanel {
     

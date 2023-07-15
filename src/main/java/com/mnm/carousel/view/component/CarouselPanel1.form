@@ -65,7 +65,7 @@
         </Property>
       </Properties>
     </Component>
-    <Container class="com.mnm.carousel.view.component.RoundedJPanel" name="roundedJPanel1">
+    <Container class="com.mnm.view.component.RoundedJPanel" name="roundedJPanel1">
       <Properties>
         <Property name="MNM_backgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="de" green="2b" red="2a" type="rgb"/>
@@ -111,7 +111,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="com.mnm.carousel.view.component.RoundedJLabel" name="roundedJLabelIcon1">
+        <Component class="com.mnm.view.component.RoundedJLabel" name="roundedJLabelIcon1">
           <Properties>
             <Property name="MNM_icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/img_persona.jpg"/>
