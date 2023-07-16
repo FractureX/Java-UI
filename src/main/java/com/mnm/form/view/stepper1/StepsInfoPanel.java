@@ -31,7 +31,7 @@ public class StepsInfoPanel extends RoundedJPanel {
     private Color checkColor = new Color(32, 195, 117);
     private Color currentColor = new Color(64, 64, 250);
     private Color inactiveColor = new Color(215, 221, 230);
-    private int currentIndex = 1;
+    private int currentIndex = 0;
     private int heightSize = 0;
     private String iconCheckPath = "/images/check-mark-32x32.png";
     private ImageIcon iconCheck = new ImageIcon(new ImageIcon(getClass().getResource(iconCheckPath)).getImage().getScaledInstance(MNM_iconSize, MNM_iconSize, Image.SCALE_SMOOTH));
@@ -56,6 +56,35 @@ public class StepsInfoPanel extends RoundedJPanel {
     private void addStep(Step step) {
         steps.add(step);
         checkHeightSize();
+    }
+    
+    // Métodos públicos
+    public Step getCurrentStep() {
+        return steps.get(currentIndex);
+    }
+    
+    public Step getFirstStep() {
+        return steps.get(0);
+    }
+    
+    public Step getLastStep() {
+        return steps.get(steps.size() - 1);
+    }
+    
+    public Step nextStep() {
+        if (currentIndex < (steps.size() - 1)) {
+            currentIndex++;
+        }
+        repaint();
+        return steps.get(currentIndex);
+    }
+    
+    public Step previousStep() {
+        if (currentIndex > 0) {
+            currentIndex--;
+        }
+        repaint();
+        return steps.get(currentIndex);
     }
     
     @Override
@@ -128,7 +157,6 @@ public class StepsInfoPanel extends RoundedJPanel {
                 g2d.setColor(inactiveColor.darker());
             }
             g2d.drawString(steps.get(i).getTitle(), xTitulo, yTitulo);
-            
             // Descripción
             int xDescripcion = xCirculo + MNM_circleSize + (MNM_circleOutsideMargin * 2);
             int yDescripcion = ((yCirculo) + g2d.getFontMetrics().getAscent() - g2d.getFontMetrics().getDescent()) + (MNM_circleSize / 2) + (MNM_circleSize / 3) - (MNM_circleSize / 6);
@@ -179,6 +207,14 @@ public class StepsInfoPanel extends RoundedJPanel {
             .addGap(0, 350, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+    
+    public int getStepsSize() {
+        return steps.size();
+    }
+    
+    public int getCurrentIndex() {
+        return currentIndex;
+    }
     
     public Color getMNM_borderColor() {
         return MNM_borderColor;

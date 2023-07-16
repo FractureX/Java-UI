@@ -36,9 +36,11 @@ public class Example extends javax.swing.JFrame {
 
         containerCentral.setMNM_shadowPixels(10);
         containerCentral.setPreferredSize(new java.awt.Dimension(700, 530));
-        containerCentral.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
+        containerCentral.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 0, 0));
 
-        stepper1.setPreferredSize(new java.awt.Dimension(670, 500));
+        stepper1.setMNM_backgroundColor(new java.awt.Color(255, 255, 255));
+        stepper1.setMNM_backgroundColor2(new java.awt.Color(255, 255, 255));
+        stepper1.setPreferredSize(new java.awt.Dimension(680, 510));
         containerCentral.add(stepper1);
 
         containerPrincipal.add(containerCentral, new java.awt.GridBagConstraints());

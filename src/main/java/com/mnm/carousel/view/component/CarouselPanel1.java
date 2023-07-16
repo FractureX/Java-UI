@@ -20,7 +20,7 @@ public class CarouselPanel1 extends RoundedJPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        roundedJLabel1 = new com.mnm.view.component.RoundedJLabel();
+        roundedJLabel1 = new com.mnm.view.component.RoundedIconJLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
@@ -51,8 +51,6 @@ public class CarouselPanel1 extends RoundedJPanel {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("<html> \"Ésto va dedicado a todos los del grupo de Java : ].\" </html>"); // NOI18N
         jLabel6.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 20, 0, 20));
-
-        roundedJLabel1.setMNM_icon(new javax.swing.ImageIcon(getClass().getResource("/images/contact-mail-32x32.png"))); // NOI18N
 
         javax.swing.GroupLayout roundedJPanel1Layout = new javax.swing.GroupLayout(roundedJPanel1);
         roundedJPanel1.setLayout(roundedJPanel1Layout);
@@ -125,7 +123,7 @@ public class CarouselPanel1 extends RoundedJPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private com.mnm.view.component.RoundedJLabel roundedJLabel1;
+    private com.mnm.view.component.RoundedIconJLabel roundedJLabel1;
     private com.mnm.view.component.RoundedJPanel roundedJPanel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -12,6 +12,7 @@
     <Property name="MNM_backgroundColor2" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="f3" green="ed" red="eb" type="rgb"/>
     </Property>
+    <Property name="MNM_shadowPixels" type="int" value="0"/>
     <Property name="MNM_shadowPixelsApply" type="boolean" value="false"/>
   </Properties>
   <AuxValues>
@@ -30,55 +31,26 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="stepsInfoPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="roundedJTextField1" max="32767" attributes="0"/>
-                  <Group type="102" attributes="0">
-                      <Component id="roundedJRadioButton1" max="32767" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="roundedJRadioButton2" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                      <Component id="roundedJRadioButton3" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <Component id="stepsInfoPanel" min="-2" pref="241" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+              <Component id="roundedJPanel1" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="103" pref="103" max="-2" attributes="0"/>
-                      <Component id="roundedJTextField1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="roundedJRadioButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="roundedJRadioButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="roundedJRadioButton3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Component id="stepsInfoPanel1" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-          </Group>
+          <Component id="stepsInfoPanel" alignment="0" pref="500" max="32767" attributes="0"/>
+          <Component id="roundedJPanel1" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="com.mnm.form.view.stepper1.StepsInfoPanel" name="stepsInfoPanel1">
+    <Component class="com.mnm.form.view.stepper1.StepsInfoPanel" name="stepsInfoPanel">
       <Properties>
-        <Property name="MNM_arc" type="int" value="10"/>
         <Property name="MNM_backgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f8" green="e4" red="d8" type="rgb"/>
         </Property>
+        <Property name="MNM_borderSize" type="int" value="10"/>
         <Property name="MNM_circleSize" type="int" value="35"/>
         <Property name="MNM_distanceBetweenStep" type="int" value="40"/>
         <Property name="MNM_iconSize" type="int" value="20"/>
@@ -87,34 +59,106 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="com.mnm.form.view.component.RoundedJTextField" name="roundedJTextField1">
+    <Container class="com.mnm.view.component.RoundedJPanel" name="roundedJPanel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Campo de texto"/>
+        <Property name="MNM_shadowPixelsApply" type="boolean" value="false"/>
       </Properties>
-    </Component>
-    <Component class="com.mnm.form.view.component.RoundedJRadioButton" name="roundedJRadioButton1">
-      <Properties>
-        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="buttonGroup1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Selecci&#xf3;n 1"/>
-      </Properties>
-    </Component>
-    <Component class="com.mnm.form.view.component.RoundedJRadioButton" name="roundedJRadioButton2">
-      <Properties>
-        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="buttonGroup1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Selecci&#xf3;n 2"/>
-      </Properties>
-    </Component>
-    <Component class="com.mnm.form.view.component.RoundedJRadioButton" name="roundedJRadioButton3">
-      <Properties>
-        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="buttonGroup1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Selecci&#xf3;n 3"/>
-      </Properties>
-    </Component>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="stepContainer" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="0" pref="29" max="32767" attributes="0"/>
+                          <Component id="btnAnterior" min="-2" pref="150" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="btnSiguiente" min="-2" pref="150" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="stepContainer" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btnSiguiente" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="btnAnterior" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="com.mnm.view.component.RoundedJPanel" name="stepContainer">
+          <Properties>
+            <Property name="MNM_shadowPixelsApply" type="boolean" value="false"/>
+          </Properties>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout"/>
+        </Container>
+        <Component class="com.mnm.view.component.RoundedJLabel" name="btnSiguiente">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Siguiente"/>
+            <Property name="MNM_backgroundActiveColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="fa" green="40" red="40" type="rgb"/>
+            </Property>
+            <Property name="MNM_backgroundInactiveColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+            </Property>
+            <Property name="MNM_icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/images/right-arrow-32x32.png"/>
+            </Property>
+            <Property name="MNM_iconMargin" type="int" value="20"/>
+            <Property name="MNM_iconPosition" type="com.mnm.view.component.RoundedJLabel$iconPosition" editor="org.netbeans.modules.form.editors.EnumEditor">
+              <Value id="Right"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Roboto" size="14" style="0"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnSiguienteMousePressed"/>
+          </Events>
+        </Component>
+        <Component class="com.mnm.view.component.RoundedJLabel" name="btnAnterior">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Anterior"/>
+            <Property name="MNM_backgroundActiveColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="fa" green="40" red="40" type="rgb"/>
+            </Property>
+            <Property name="MNM_backgroundInactiveColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+            </Property>
+            <Property name="MNM_icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/images/left-arrow-32x32.png"/>
+            </Property>
+            <Property name="MNM_iconMargin" type="int" value="20"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Roboto" size="14" style="0"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnAnteriorMousePressed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>
