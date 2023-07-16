@@ -44,6 +44,10 @@
         <Property name="MNM_backgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="e6" green="dd" red="d7" type="rgb"/>
         </Property>
+        <Property name="MNM_backgroundColor2" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="e6" green="dd" red="d7" type="rgb"/>
+        </Property>
+        <Property name="MNM_shadowPixelsApply" type="boolean" value="false"/>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[800, 600]"/>
         </Property>
@@ -53,8 +57,9 @@
       <SubComponents>
         <Container class="com.mnm.view.component.RoundedJPanel" name="containerCentral">
           <Properties>
+            <Property name="MNM_shadowPixels" type="int" value="10"/>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[700, 510]"/>
+              <Dimension value="[700, 530]"/>
             </Property>
           </Properties>
           <Constraints>
@@ -66,49 +71,6 @@
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout">
             <Property name="alignment" type="int" value="0"/>
           </Layout>
-          <SubComponents>
-            <Component class="com.mnm.carousel.view.component.Carousel" name="carousel1">
-            </Component>
-            <Container class="com.mnm.view.component.RoundedJPanel" name="roundedJPanel1">
-              <Properties>
-                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[385, 500]"/>
-                </Property>
-              </Properties>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                          <Component id="roundedJTextField1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="167" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
-                          <Component id="roundedJTextField1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="294" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Component class="com.mnm.form.view.component.RoundedJTextField" name="roundedJTextField1">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="roundedJTextField1"/>
-                    <Property name="MNM_icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/img_persona.jpg"/>
-                    </Property>
-                    <Property name="MNM_iconSize" type="int" value="25"/>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
-          </SubComponents>
         </Container>
       </SubComponents>
     </Container>

@@ -18,8 +18,11 @@ public class CarouselPanel2 extends RoundedJPanel {
         jLabel1 = new javax.swing.JLabel();
 
         setMNM_backgroundColor(new java.awt.Color(64, 64, 250));
+        setMNM_backgroundColor2(new java.awt.Color(64, 64, 250));
+        setMNM_shadowPixelsApply(false);
         setMaximumSize(new java.awt.Dimension(300, 500));
         setMinimumSize(new java.awt.Dimension(300, 500));
+        setPreferredSize(new java.awt.Dimension(300, 500));
 
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
