@@ -5,45 +5,59 @@ package com.mnm.form.view.stepper1;
 
 import com.mnm.view.component.RoundedJPanel;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.RenderingHints;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.ImageIcon;
 
 public class StepsInfoPanel extends RoundedJPanel {
     
     private Color MNM_borderColor = new Color(255, 255, 255);
+    private Color MNM_titleForegrundColor = new Color(0, 0, 0);
+    private Color MNM_descriptionForegrundColor = new Color(0, 0, 0);
     private int MNM_borderSize = 5;
     private int MNM_distanceBetweenStep = 30;
     private int MNM_margin = 30;
     private int MNM_circleSize = 50;
+    private int MNM_circleOutsideMargin = 10;
     private int MNM_iconSize = 32;
     
     private List<Step> steps = new ArrayList<>();
     private Color checkColor = new Color(32, 195, 117);
     private Color currentColor = new Color(64, 64, 250);
     private Color inactiveColor = new Color(215, 221, 230);
-    private int currentIndex = 0;
+    private int currentIndex = 1;
     private int heightSize = 0;
+    private String iconCheckPath = "/images/check-mark-32x32.png";
+    private ImageIcon iconCheck = new ImageIcon(new ImageIcon(getClass().getResource(iconCheckPath)).getImage().getScaledInstance(MNM_iconSize, MNM_iconSize, Image.SCALE_SMOOTH));
+    private Font titleFont = null;
+    private Font descriptionFont = null;
     
     public StepsInfoPanel() {
         initComponents();
         addSteps();
+        titleFont = getFont().deriveFont(Font.BOLD, 14);
+        descriptionFont = getFont().deriveFont(Font.BOLD, 18);
     }
     
     private void addSteps() {
-        addStep(new Step("/images/info-32x32.png", new StepperPanel1(), "Título 1", "Descripción 1"));
-        addStep(new Step("/images/contact-mail-32x32.png", new StepperPanel2(), "Título 2", "Descripción 2"));
-        addStep(new Step("/images/user-32x32.png", new StepperPanel3(), "Título 3", "Descripción 3"));
+        addStep(new Step("/images/info-32x32.png", "/images/info-32x32-2.png", new StepperPanel1(), "Título 1", "Descripción 1"));
+        addStep(new Step("/images/contact-mail-32x32.png", "/images/contact-mail-32x32-2.png", new StepperPanel2(), "Título 2", "Descripción 2"));
+        addStep(new Step("/images/user-32x32.png", "/images/user-32x32-2.png", new StepperPanel3(), "Título 3", "Descripción 3"));
+        addStep(new Step("/images/info-32x32.png", "/images/info-32x32-2.png", new StepperPanel4(), "Título 4", "Descripción 4"));
+        checkIconsSize();
     }
     
     private void addStep(Step step) {
         steps.add(step);
-        heightSize = (MNM_circleSize * steps.size()) + (MNM_distanceBetweenStep * (steps.size() - 1));
+        checkHeightSize();
     }
-
+    
     @Override
     protected void paintComponent(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
@@ -63,15 +77,89 @@ public class StepsInfoPanel extends RoundedJPanel {
         for (int i = 0; i < steps.size(); i++) {
             if (i < currentIndex) {
                 // checkColor
-                
+                g2d.setColor(checkColor);
             } else if (i == currentIndex) {
                 // currentColor
-                
+                g2d.setColor(currentColor);
             } else {
                 // inactiveColor
-                
+                g2d.setColor(inactiveColor);
             }
+            // Círculo
+            int xCirculo = MNM_margin;
+            int yCirculo = ((getHeight() / 2) - (heightSize / 2)) + (i * (MNM_circleSize + MNM_distanceBetweenStep));
+            if (i <= currentIndex) {
+                g2d.fillOval(xCirculo, yCirculo, MNM_circleSize, MNM_circleSize);
+            }
+            int xCirculoExterior = xCirculo - (MNM_circleOutsideMargin / 2);
+            int yCirculoExterior = yCirculo - (MNM_circleOutsideMargin / 2);
+            g2d.drawOval(xCirculoExterior, yCirculoExterior, (MNM_circleSize + MNM_circleOutsideMargin), (MNM_circleSize + MNM_circleOutsideMargin));
+            // Ícono
+            int xIcono = (xCirculo + (MNM_circleSize / 2)) - (MNM_iconSize / 2);
+            int yIcono = (yCirculo + (MNM_circleSize / 2)) - (MNM_iconSize / 2);
+            if (i < currentIndex) {
+                g2d.drawImage(iconCheck.getImage(), xIcono, yIcono, null);
+            } else if (i == currentIndex) {
+                g2d.drawImage(steps.get(i).getImageIcon().getImage(), xIcono, yIcono, null);
+            } else {
+                g2d.drawImage(steps.get(i).getImageIcon2().getImage(), xIcono, yIcono, null);
+            }
+            // Líneas de separación
+            if (i < (steps.size() - 1)) {
+                int width = 2;
+                int height = MNM_distanceBetweenStep - (MNM_distanceBetweenStep / 2);
+                int xLinea = xCirculo + (MNM_circleSize / 2) - (width / 2);
+                int yLinea = yCirculo + MNM_circleSize + ((MNM_distanceBetweenStep / 2) / 2);
+                if (i < currentIndex) {
+                    // checkColor
+                    g2d.setColor(checkColor);
+                } else if (i < (steps.size() - 1)) {
+                    g2d.setColor(inactiveColor);
+                }
+                g2d.fillRoundRect(xLinea, yLinea, width, height, width, width);
+            }
+            // Título
+            int xTitulo = xCirculo + MNM_circleSize + (MNM_circleOutsideMargin * 2);
+            int yTitulo = ((yCirculo) + g2d.getFontMetrics().getAscent() - g2d.getFontMetrics().getDescent()) + (MNM_circleSize / 6);
+            g2d.setFont(titleFont);
+            if (i <= currentIndex) {
+                g2d.setColor(MNM_titleForegrundColor);
+            } else {
+                g2d.setColor(inactiveColor.darker());
+            }
+            g2d.drawString(steps.get(i).getTitle(), xTitulo, yTitulo);
+            
+            // Descripción
+            int xDescripcion = xCirculo + MNM_circleSize + (MNM_circleOutsideMargin * 2);
+            int yDescripcion = ((yCirculo) + g2d.getFontMetrics().getAscent() - g2d.getFontMetrics().getDescent()) + (MNM_circleSize / 2) + (MNM_circleSize / 3) - (MNM_circleSize / 6);
+            g2d.setFont(descriptionFont);
+            if (i <= currentIndex) {
+                g2d.setColor(MNM_titleForegrundColor);
+            } else {
+                g2d.setColor(inactiveColor.darker());
+            }
+            g2d.drawString(steps.get(i).getDescription(), xDescripcion, yDescripcion);
+            
         }
+    }
+    
+    private void checkHeightSize() {
+        heightSize = (MNM_circleSize * steps.size()) + (MNM_distanceBetweenStep * (steps.size() - 1));
+    }
+    
+    private void checkIconsSize() {
+        iconCheck = new ImageIcon(new ImageIcon(getClass().getResource(iconCheckPath)).getImage().getScaledInstance(MNM_iconSize, MNM_iconSize, Image.SCALE_SMOOTH));
+        for (Step step : steps) {
+            step.setImageIcon(new ImageIcon(new ImageIcon(getClass().getResource(step.getIconPath())).getImage().getScaledInstance(MNM_iconSize, MNM_iconSize, Image.SCALE_SMOOTH)));
+            step.setImageIcon2(new ImageIcon(new ImageIcon(getClass().getResource(step.getIconPath2())).getImage().getScaledInstance(MNM_iconSize, MNM_iconSize, Image.SCALE_SMOOTH)));
+        }
+    }
+
+    @Override
+    public void setFont(Font font) {
+        super.setFont(font);
+        titleFont = font.deriveFont(Font.BOLD, 10);
+        descriptionFont = font.deriveFont(Font.BOLD, 14);
     }
     
     @SuppressWarnings("unchecked")
@@ -114,6 +202,7 @@ public class StepsInfoPanel extends RoundedJPanel {
 
     public void setMNM_distanceBetweenStep(int MNM_distanceBetweenStep) {
         this.MNM_distanceBetweenStep = MNM_distanceBetweenStep;
+        checkHeightSize();
     }
 
     public int getMNM_margin() {
@@ -130,6 +219,7 @@ public class StepsInfoPanel extends RoundedJPanel {
 
     public void setMNM_circleSize(int MNM_circleSize) {
         this.MNM_circleSize = MNM_circleSize;
+        checkHeightSize();
     }
 
     public int getMNM_iconSize() {
@@ -138,6 +228,31 @@ public class StepsInfoPanel extends RoundedJPanel {
 
     public void setMNM_iconSize(int MNM_iconSize) {
         this.MNM_iconSize = MNM_iconSize;
+        checkIconsSize();
+    }
+
+    public int getMNM_circleOutsideMargin() {
+        return MNM_circleOutsideMargin;
+    }
+
+    public void setMNM_circleOutsideMargin(int MNM_circleOutsideMargin) {
+        this.MNM_circleOutsideMargin = MNM_circleOutsideMargin;
+    }
+
+    public Color getMNM_titleForegrundColor() {
+        return MNM_titleForegrundColor;
+    }
+
+    public void setMNM_titleForegrundColor(Color MNM_titleForegrundColor) {
+        this.MNM_titleForegrundColor = MNM_titleForegrundColor;
+    }
+
+    public Color getMNM_descriptionForegrundColor() {
+        return MNM_descriptionForegrundColor;
+    }
+
+    public void setMNM_descriptionForegrundColor(Color MNM_descriptionForegrundColor) {
+        this.MNM_descriptionForegrundColor = MNM_descriptionForegrundColor;
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

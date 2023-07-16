@@ -22,6 +22,7 @@ public class Example extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         containerPrincipal = new com.mnm.view.component.RoundedJPanel();
         containerCentral = new com.mnm.view.component.RoundedJPanel();
+        stepper1 = new com.mnm.form.view.stepper1.Stepper();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -36,6 +37,10 @@ public class Example extends javax.swing.JFrame {
         containerCentral.setMNM_shadowPixels(10);
         containerCentral.setPreferredSize(new java.awt.Dimension(700, 530));
         containerCentral.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
+
+        stepper1.setPreferredSize(new java.awt.Dimension(670, 500));
+        containerCentral.add(stepper1);
+
         containerPrincipal.add(containerCentral, new java.awt.GridBagConstraints());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -57,5 +62,6 @@ public class Example extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private com.mnm.view.component.RoundedJPanel containerCentral;
     private com.mnm.view.component.RoundedJPanel containerPrincipal;
+    private com.mnm.form.view.stepper1.Stepper stepper1;
     // End of variables declaration//GEN-END:variables
 }

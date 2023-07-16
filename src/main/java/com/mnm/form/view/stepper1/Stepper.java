@@ -7,8 +7,6 @@ import com.mnm.view.component.RoundedJPanel;
 
 public class Stepper extends RoundedJPanel {
     
-    
-    
     public Stepper() {
         initComponents();
     }
@@ -25,6 +23,10 @@ public class Stepper extends RoundedJPanel {
 
         stepsInfoPanel1.setMNM_arc(10);
         stepsInfoPanel1.setMNM_backgroundColor(new java.awt.Color(216, 228, 248));
+        stepsInfoPanel1.setMNM_circleSize(35);
+        stepsInfoPanel1.setMNM_distanceBetweenStep(40);
+        stepsInfoPanel1.setMNM_iconSize(20);
+        stepsInfoPanel1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -39,7 +41,7 @@ public class Stepper extends RoundedJPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(stepsInfoPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
+                .addComponent(stepsInfoPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents

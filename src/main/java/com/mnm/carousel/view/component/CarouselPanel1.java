@@ -52,7 +52,7 @@ public class CarouselPanel1 extends RoundedJPanel {
         jLabel6.setText("<html> \"Ésto va dedicado a todos los del grupo de Java : ].\" </html>"); // NOI18N
         jLabel6.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 20, 0, 20));
 
-        roundedJLabel1.setMNM_icon(new javax.swing.ImageIcon(getClass().getResource("/images/img_persona.jpg"))); // NOI18N
+        roundedJLabel1.setMNM_icon(new javax.swing.ImageIcon(getClass().getResource("/images/contact-mail-32x32.png"))); // NOI18N
 
         javax.swing.GroupLayout roundedJPanel1Layout = new javax.swing.GroupLayout(roundedJPanel1);
         roundedJPanel1.setLayout(roundedJPanel1Layout);
