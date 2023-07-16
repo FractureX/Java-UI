@@ -20,11 +20,18 @@ public class Stepper extends RoundedJPanel {
     
     public Stepper() {
         initComponents();
-        init();
     }
     
-    private void init() {
+    public void init() {
         setInitStep();
+    }
+    
+    public void addStep(Step step) {
+        stepsInfoPanel.addStep(step);
+    }
+    
+    public void checkIconsSize() {
+        stepsInfoPanel.checkIconsSize();
     }
     
     private void setInitStep() {
@@ -55,11 +62,18 @@ public class Stepper extends RoundedJPanel {
     }
     
     private void checkCurrentStep() {
+        btnAnterior.setVisible(true);
         if (stepsInfoPanel.getStepsSize() == 0) {
             btnAnterior.setEnabled(false);
             btnAnterior.setCursor(cursorDefault);
             btnSiguiente.setEnabled(false);
             btnSiguiente.setCursor(cursorDefault);
+        } else if (stepsInfoPanel.getStepsSize() == 1) {
+            btnAnterior.setVisible(false);
+            btnSiguiente.setEnabled(true);
+            btnSiguiente.setCursor(cursorHand);
+            btnSiguiente.setText(MNM_lastStepText);
+            btnSiguiente.setMNM_icon(null);
         } else {
             if (stepsInfoPanel.getCurrentIndex() == 0) {
                 btnAnterior.setEnabled(false);

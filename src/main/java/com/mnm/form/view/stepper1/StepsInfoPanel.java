@@ -40,20 +40,11 @@ public class StepsInfoPanel extends RoundedJPanel {
     
     public StepsInfoPanel() {
         initComponents();
-        addSteps();
         titleFont = getFont().deriveFont(Font.BOLD, 14);
         descriptionFont = getFont().deriveFont(Font.BOLD, 18);
     }
     
-    private void addSteps() {
-        addStep(new Step("/images/info-32x32.png", "/images/info-32x32-2.png", new StepperPanel1(), "Título 1", "Descripción 1"));
-        addStep(new Step("/images/contact-mail-32x32.png", "/images/contact-mail-32x32-2.png", new StepperPanel2(), "Título 2", "Descripción 2"));
-        addStep(new Step("/images/user-32x32.png", "/images/user-32x32-2.png", new StepperPanel3(), "Título 3", "Descripción 3"));
-        addStep(new Step("/images/info-32x32.png", "/images/info-32x32-2.png", new StepperPanel4(), "Título 4", "Descripción 4"));
-        checkIconsSize();
-    }
-    
-    private void addStep(Step step) {
+    public void addStep(Step step) {
         steps.add(step);
         checkHeightSize();
     }
@@ -175,7 +166,7 @@ public class StepsInfoPanel extends RoundedJPanel {
         heightSize = (MNM_circleSize * steps.size()) + (MNM_distanceBetweenStep * (steps.size() - 1));
     }
     
-    private void checkIconsSize() {
+    public void checkIconsSize() {
         iconCheck = new ImageIcon(new ImageIcon(getClass().getResource(iconCheckPath)).getImage().getScaledInstance(MNM_iconSize, MNM_iconSize, Image.SCALE_SMOOTH));
         for (Step step : steps) {
             step.setImageIcon(new ImageIcon(new ImageIcon(getClass().getResource(step.getIconPath())).getImage().getScaledInstance(MNM_iconSize, MNM_iconSize, Image.SCALE_SMOOTH)));

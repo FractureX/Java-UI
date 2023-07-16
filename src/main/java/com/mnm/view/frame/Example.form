@@ -73,7 +73,7 @@
             <Property name="verticalGap" type="int" value="0"/>
           </Layout>
           <SubComponents>
-            <Component class="com.mnm.form.view.stepper1.Stepper" name="stepper1">
+            <Component class="com.mnm.form.view.stepper1.Stepper" name="stepper">
               <Properties>
                 <Property name="MNM_backgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
