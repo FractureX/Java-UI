@@ -23,12 +23,12 @@ public class Stepper extends RoundedJPanel {
     }
     
     public void init() {
-        stepsInfoPanel.checkIconsSize();
+        stepsInfoPanel.init();
         setInitStep();
     }
     
-    public void addStep(Step step) {
-        stepsInfoPanel.addStep(step);
+    public void addStep(String iconPath, String iconPath2, RoundedJPanel panel, String title, String description) {
+        stepsInfoPanel.addStep(new Step(iconPath, iconPath2, panel, title, description));
     }
     
     private void setInitStep() {
@@ -37,13 +37,13 @@ public class Stepper extends RoundedJPanel {
     }
     
     private void previousStep() {
-        currentStep = stepsInfoPanel.previousStep();
+        currentStep = stepsInfoPanel.doStep(StepsInfoPanel.doStep.previous);
         setStep(currentStep);
     }
     
     private void nextStep() {
         if (currentStep != stepsInfoPanel.getLastStep()) {
-            currentStep = stepsInfoPanel.nextStep();
+            currentStep = stepsInfoPanel.doStep(StepsInfoPanel.doStep.next);
             setStep(currentStep);
         } else {
             JOptionPane.showMessageDialog(null, "Form finalizado : ]");

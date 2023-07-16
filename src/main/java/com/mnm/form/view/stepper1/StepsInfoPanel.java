@@ -11,9 +11,12 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.RenderingHints;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ImageIcon;
+import javax.swing.Timer;
 
 public class StepsInfoPanel extends RoundedJPanel {
     
@@ -28,9 +31,9 @@ public class StepsInfoPanel extends RoundedJPanel {
     private int MNM_iconSize = 32;
     
     private List<Step> steps = new ArrayList<>();
-    private Color checkColor = new Color(32, 195, 117);
-    private Color currentColor = new Color(64, 64, 250);
-    private Color inactiveColor = new Color(215, 221, 230);
+    private Color checkColor = new Color(32, 195, 117, 255);
+    private Color activeColor = new Color(64, 64, 250, 255);
+    private Color inactiveColor = new Color(215, 221, 230, 255);
     private int currentIndex = 0;
     private int heightSize = 0;
     private String iconCheckPath = "/images/check-mark-32x32.png";
@@ -38,10 +41,72 @@ public class StepsInfoPanel extends RoundedJPanel {
     private Font titleFont = null;
     private Font descriptionFont = null;
     
+    // Timer
+    private int lastIndex = currentIndex;
+    private Timer timer[];
+    private int timerMilSec = 250;
+    private Color currentColor[];
+    
+    // Enum
+    public enum doStep {
+        previous, 
+        next
+    }
+    
     public StepsInfoPanel() {
         initComponents();
-        titleFont = getFont().deriveFont(Font.BOLD, 14);
-        descriptionFont = getFont().deriveFont(Font.BOLD, 18);
+    }
+    
+    public void init() {
+        initEvents();
+        checkIconsSize();
+        deriveFont();
+        initCurrentColor();
+    }
+    
+    private void initCurrentColor() {
+        currentColor = new Color[steps.size()];
+        for (int i = 0; i < steps.size(); i++) {
+            if (i < currentIndex) {
+                currentColor[i] = checkColor;
+            } else if (i == currentIndex) {
+                currentColor[i] = activeColor;
+            } else {
+                currentColor[i] = inactiveColor;
+            }
+        }
+    }
+    
+    private void initEvents() {
+        timer = new Timer[steps.size()];
+        for (int i = 0; i < steps.size(); i++) {
+            final int index = i;
+            timer[i] = new Timer((int) (timerMilSec / 10), new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    Color finalColor = null;
+                    if (index < currentIndex) {
+                        finalColor = checkColor;
+                        currentColor[index] = com.mnm.functions.Functions.extractColor(currentColor[index], finalColor, false, timerMilSec, timerMilSec / 10);
+                    } else if (index == currentIndex) {
+                        finalColor = activeColor;
+                        if (lastIndex > currentIndex) {
+                            currentColor[index] = com.mnm.functions.Functions.extractColor(currentColor[index], finalColor, true, timerMilSec, timerMilSec / 10);
+                        } else {
+                            currentColor[index] = com.mnm.functions.Functions.extractColor(currentColor[index], finalColor, false, timerMilSec, timerMilSec / 10);
+                        }
+                    } else {
+                        finalColor = inactiveColor;
+                        currentColor[index] = com.mnm.functions.Functions.extractColor(currentColor[index], finalColor, true, timerMilSec, timerMilSec / 10);
+                    }
+                    repaint();
+                    if (currentColor[index].equals(finalColor)) {
+                        timer[index].stop();
+                        return;
+                    }
+                }
+            });
+        }
     }
     
     public void addStep(Step step) {
@@ -62,18 +127,28 @@ public class StepsInfoPanel extends RoundedJPanel {
         return steps.get(steps.size() - 1);
     }
     
-    public Step nextStep() {
-        if (currentIndex < (steps.size() - 1)) {
-            currentIndex++;
+    public Step doStep(doStep step) {
+        if (step == doStep.previous) {
+            if (currentIndex > 0) {
+                lastIndex = currentIndex;
+                currentIndex--;
+            }
+        } else {
+            if (currentIndex < (steps.size() - 1)) {
+                lastIndex = currentIndex;
+                currentIndex++;
+            }
         }
-        repaint();
-        return steps.get(currentIndex);
-    }
-    
-    public Step previousStep() {
-        if (currentIndex > 0) {
-            currentIndex--;
+        // lastIndex
+        if (timer[lastIndex].isRunning()) {
+            timer[lastIndex].stop();
         }
+        timer[lastIndex].start();
+        // currentIndex
+        if (timer[currentIndex].isRunning()) {
+            timer[currentIndex].stop();
+        }
+        timer[currentIndex].start();
         repaint();
         return steps.get(currentIndex);
     }
@@ -95,16 +170,7 @@ public class StepsInfoPanel extends RoundedJPanel {
         // Steps
         g2d.setFont(getFont());
         for (int i = 0; i < steps.size(); i++) {
-            if (i < currentIndex) {
-                // checkColor
-                g2d.setColor(checkColor);
-            } else if (i == currentIndex) {
-                // currentColor
-                g2d.setColor(currentColor);
-            } else {
-                // inactiveColor
-                g2d.setColor(inactiveColor);
-            }
+            g2d.setColor(currentColor[i]);
             // Círculo
             int xCirculo = MNM_margin;
             int yCirculo = ((getHeight() / 2) - (heightSize / 2)) + (i * (MNM_circleSize + MNM_distanceBetweenStep));
@@ -130,12 +196,6 @@ public class StepsInfoPanel extends RoundedJPanel {
                 int height = MNM_distanceBetweenStep - (MNM_distanceBetweenStep / 2);
                 int xLinea = xCirculo + (MNM_circleSize / 2) - (width / 2);
                 int yLinea = yCirculo + MNM_circleSize + ((MNM_distanceBetweenStep / 2) / 2);
-                if (i < currentIndex) {
-                    // checkColor
-                    g2d.setColor(checkColor);
-                } else if (i < (steps.size() - 1)) {
-                    g2d.setColor(inactiveColor);
-                }
                 g2d.fillRoundRect(xLinea, yLinea, width, height, width, width);
             }
             // Título
@@ -158,7 +218,6 @@ public class StepsInfoPanel extends RoundedJPanel {
                 g2d.setColor(inactiveColor.darker());
             }
             g2d.drawString(steps.get(i).getDescription(), xDescripcion, yDescripcion);
-            
         }
     }
     
@@ -173,12 +232,16 @@ public class StepsInfoPanel extends RoundedJPanel {
             step.setImageIcon2(new ImageIcon(new ImageIcon(getClass().getResource(step.getIconPath2())).getImage().getScaledInstance(MNM_iconSize, MNM_iconSize, Image.SCALE_SMOOTH)));
         }
     }
+    
+    private void deriveFont() {
+        titleFont = getFont().deriveFont(Font.BOLD, 10);
+        descriptionFont = getFont().deriveFont(Font.BOLD, 14);
+    }
 
     @Override
     public void setFont(Font font) {
         super.setFont(font);
-        titleFont = font.deriveFont(Font.BOLD, 10);
-        descriptionFont = font.deriveFont(Font.BOLD, 14);
+        deriveFont();
     }
     
     @SuppressWarnings("unchecked")
