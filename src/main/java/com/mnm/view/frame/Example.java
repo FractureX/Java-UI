@@ -22,13 +22,10 @@ public class Example extends javax.swing.JFrame {
     }
     
     private void addSteps() {
-        stepper.addStep(new Step(
-                "/images/info-32x32.png", 
-                "/images/info-32x32-2.png", 
-                new StepperPanel1(), 
-                "Título 1", 
-                "Descripción 1")
-        );
+        stepper.addStep(new Step("/images/info-32x32.png", "/images/info-32x32-2.png", new StepperPanel1(), "Título 1", "Descripción 1"));
+        stepper.addStep(new Step("/images/contact-mail-32x32.png", "/images/contact-mail-32x32-2.png", new StepperPanel2(), "Título 2", "Descripción 2"));
+        stepper.addStep(new Step("/images/user-32x32.png", "/images/user-32x32-2.png", new StepperPanel3(), "Título 3", "Descripción 3"));
+        stepper.addStep(new Step("/images/info-32x32.png", "/images/info-32x32-2.png", new StepperPanel4(), "Título 4", "Descripción 4"));
         stepper.init();
     }
     
