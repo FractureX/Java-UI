@@ -22,11 +22,13 @@ public class Example extends javax.swing.JFrame {
     }
     
     private void addSteps() {
-        stepper.addStep(new Step("/images/info-32x32.png", "/images/info-32x32-2.png", new StepperPanel1(), "Título 1", "Descripción 1"));
-        stepper.addStep(new Step("/images/contact-mail-32x32.png", "/images/contact-mail-32x32-2.png", new StepperPanel2(), "Título 2", "Descripción 2"));
-        stepper.addStep(new Step("/images/user-32x32.png", "/images/user-32x32-2.png", new StepperPanel3(), "Título 3", "Descripción 3"));
-        stepper.addStep(new Step("/images/info-32x32.png", "/images/info-32x32-2.png", new StepperPanel4(), "Título 4", "Descripción 4"));
-        stepper.checkIconsSize();
+        stepper.addStep(new Step(
+                "/images/info-32x32.png", 
+                "/images/info-32x32-2.png", 
+                new StepperPanel1(), 
+                "Título 1", 
+                "Descripción 1")
+        );
         stepper.init();
     }
     
@@ -50,12 +52,12 @@ public class Example extends javax.swing.JFrame {
         containerPrincipal.setLayout(new java.awt.GridBagLayout());
 
         containerCentral.setMNM_shadowPixels(10);
-        containerCentral.setPreferredSize(new java.awt.Dimension(700, 530));
+        containerCentral.setPreferredSize(new java.awt.Dimension(750, 560));
         containerCentral.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 0, 0));
 
         stepper.setMNM_backgroundColor(new java.awt.Color(255, 255, 255));
         stepper.setMNM_backgroundColor2(new java.awt.Color(255, 255, 255));
-        stepper.setPreferredSize(new java.awt.Dimension(680, 510));
+        stepper.setPreferredSize(new java.awt.Dimension(728, 540));
         containerCentral.add(stepper);
 
         containerPrincipal.add(containerCentral, new java.awt.GridBagConstraints());

@@ -23,15 +23,12 @@ public class Stepper extends RoundedJPanel {
     }
     
     public void init() {
+        stepsInfoPanel.checkIconsSize();
         setInitStep();
     }
     
     public void addStep(Step step) {
         stepsInfoPanel.addStep(step);
-    }
-    
-    public void checkIconsSize() {
-        stepsInfoPanel.checkIconsSize();
     }
     
     private void setInitStep() {

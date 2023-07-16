@@ -59,7 +59,7 @@
           <Properties>
             <Property name="MNM_shadowPixels" type="int" value="10"/>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[700, 530]"/>
+              <Dimension value="[750, 560]"/>
             </Property>
           </Properties>
           <Constraints>
@@ -82,7 +82,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[680, 510]"/>
+                  <Dimension value="[728, 540]"/>
                 </Property>
               </Properties>
             </Component>
