@@ -47,7 +47,7 @@ public class Example extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        tablePanel1 = new com.mnm.component.view.table1.TablePanel();
+        tablePanel1 = new com.mnm.component.table1.view.TablePanel();
         containerPrincipal = new com.mnm.component.view.RoundedJPanel();
         containerCentral = new com.mnm.component.view.RoundedJPanel();
         menu1 = new com.mnm.component.menu1.view.Menu();
@@ -108,6 +108,6 @@ public class Example extends javax.swing.JFrame {
     private com.mnm.component.view.RoundedJPanel containerCentral;
     private com.mnm.component.view.RoundedJPanel containerPrincipal;
     private com.mnm.component.menu1.view.Menu menu1;
-    private com.mnm.component.view.table1.TablePanel tablePanel1;
+    private com.mnm.component.table1.view.TablePanel tablePanel1;
     // End of variables declaration//GEN-END:variables
 }

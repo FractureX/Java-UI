@@ -1,7 +1,7 @@
 /*
  * Proyecto M&M
  */
-package com.mnm.component.view.table1;
+package com.mnm.component.table1.view;
 
 import com.mnm.component.view.RoundedJPanel;
 import com.mnm.component.table1.view.PanelAmount;
@@ -35,7 +35,7 @@ public class TablePanel extends RoundedJPanel {
         roundedJLabel1 = new com.mnm.component.view.RoundedJLabel();
         roundedJTextField1 = new com.mnm.form.component.view.RoundedJTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        table1 = new com.mnm.component.view.table1.Table();
+        table1 = new com.mnm.component.table1.view.Table();
         roundedJPanel2 = new com.mnm.component.view.RoundedJPanel();
         jButton1 = new javax.swing.JButton();
 
@@ -231,7 +231,7 @@ public class TablePanel extends RoundedJPanel {
     private com.mnm.component.view.RoundedJPanel roundedJPanel1;
     private com.mnm.component.view.RoundedJPanel roundedJPanel2;
     private com.mnm.form.component.view.RoundedJTextField roundedJTextField1;
-    private com.mnm.component.view.table1.Table table1;
+    private com.mnm.component.table1.view.Table table1;
     // End of variables declaration//GEN-END:variables
     
 }

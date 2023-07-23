@@ -1,7 +1,7 @@
 /*
  * Proyecto M&M
  */
-package com.mnm.component.view.table1;
+package com.mnm.component.table1.view;
 
 import java.awt.Color;
 import java.awt.Dimension;

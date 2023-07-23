@@ -4,7 +4,7 @@
   <NonVisualComponents>
     <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
     </Component>
-    <Component class="com.mnm.component.view.table1.TablePanel" name="tablePanel1">
+    <Component class="com.mnm.component.table1.view.TablePanel" name="tablePanel1">
     </Component>
   </NonVisualComponents>
   <Properties>
