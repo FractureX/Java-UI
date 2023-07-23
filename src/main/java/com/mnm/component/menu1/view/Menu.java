@@ -19,7 +19,6 @@ import java.awt.event.AdjustmentEvent;
 import java.awt.event.AdjustmentListener;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import org.jdesktop.animation.timing.Animator;
 import org.jdesktop.animation.timing.TimingTarget;
@@ -329,7 +328,6 @@ public class Menu extends javax.swing.JPanel {
                                     indexCurrentItem = index;
                                     indexCurrentNested = -1;
                                     menuItemClick();
-                                    JOptionPane.showMessageDialog(null, "Clickedo un item MENUITEM\nindexCurrentItem: " + indexCurrentItem + "\nindexCurrentNested: " + indexCurrentNested);
                                     //repaint();
                                 }
                             }
@@ -341,7 +339,6 @@ public class Menu extends javax.swing.JPanel {
                                 if (index != indexCurrentNested) {
                                     indexSelectedNested = index;
                                     menuItemNested();
-                                    JOptionPane.showMessageDialog(null, "Clickedo un item MENUITEMNEST\nindexCurrentItem: " + indexCurrentItem + "\nindexCurrentNested: " + indexCurrentNested);
                                     //repaint();
                                 }
                             }
@@ -351,7 +348,6 @@ public class Menu extends javax.swing.JPanel {
                                 if (indexCurrentItem != index) {
                                     indexCurrentItem = index;
                                     indexCurrentNested = calculateCurrentNestedIndex(index);
-                                    JOptionPane.showMessageDialog(null, "Clickedo un item MENUITEMNEST_NESTED\nindexCurrentItem: " + indexCurrentItem + "\nindexCurrentNested: " + indexCurrentNested);
                                     menuItemClick();
                                     //repaint();
                                 }
