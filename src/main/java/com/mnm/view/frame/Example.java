@@ -3,14 +3,14 @@
  */
 package com.mnm.view.frame;
 
-import com.mnm.form.view.stepper1.StepperPanel1;
-import com.mnm.form.view.stepper1.StepperPanel2;
-import com.mnm.form.view.stepper1.StepperPanel3;
-import com.mnm.form.view.stepper1.StepperPanel4;
-import com.mnm.view.component.table1.view.PanelAmount;
-import com.mnm.view.component.table1.view.PanelName;
-import com.mnm.view.component.table1.view.PanelPaymentStatus;
-import com.mnm.view.component.table1.view.PanelUserStatus;
+import com.mnm.form.stepper1.view.StepperPanel1;
+import com.mnm.form.stepper1.view.StepperPanel2;
+import com.mnm.form.stepper1.view.StepperPanel3;
+import com.mnm.form.stepper1.view.StepperPanel4;
+import com.mnm.component.table1.view.PanelAmount;
+import com.mnm.component.table1.view.PanelName;
+import com.mnm.component.table1.view.PanelPaymentStatus;
+import com.mnm.component.table1.view.PanelUserStatus;
 import java.awt.Color;
 import java.awt.Toolkit;
 import javax.swing.JCheckBox;
@@ -47,9 +47,9 @@ public class Example extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        tablePanel1 = new com.mnm.view.component.table1.TablePanel();
-        containerPrincipal = new com.mnm.view.component.RoundedJPanel();
-        containerCentral = new com.mnm.view.component.RoundedJPanel();
+        tablePanel1 = new com.mnm.component.view.table1.TablePanel();
+        containerPrincipal = new com.mnm.component.view.RoundedJPanel();
+        containerCentral = new com.mnm.component.view.RoundedJPanel();
         menu1 = new com.mnm.component.menu1.view.Menu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -105,9 +105,9 @@ public class Example extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
-    private com.mnm.view.component.RoundedJPanel containerCentral;
-    private com.mnm.view.component.RoundedJPanel containerPrincipal;
+    private com.mnm.component.view.RoundedJPanel containerCentral;
+    private com.mnm.component.view.RoundedJPanel containerPrincipal;
     private com.mnm.component.menu1.view.Menu menu1;
-    private com.mnm.view.component.table1.TablePanel tablePanel1;
+    private com.mnm.component.view.table1.TablePanel tablePanel1;
     // End of variables declaration//GEN-END:variables
 }

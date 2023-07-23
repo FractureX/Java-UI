@@ -4,7 +4,7 @@
   <NonVisualComponents>
     <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
     </Component>
-    <Component class="com.mnm.view.component.table1.TablePanel" name="tablePanel1">
+    <Component class="com.mnm.component.view.table1.TablePanel" name="tablePanel1">
     </Component>
   </NonVisualComponents>
   <Properties>
@@ -40,7 +40,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="com.mnm.view.component.RoundedJPanel" name="containerPrincipal">
+    <Container class="com.mnm.component.view.RoundedJPanel" name="containerPrincipal">
       <Properties>
         <Property name="MNM_arc" type="int" value="0"/>
         <Property name="MNM_backgroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -68,7 +68,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="com.mnm.view.component.RoundedJPanel" name="containerCentral">
+        <Container class="com.mnm.component.view.RoundedJPanel" name="containerCentral">
           <Properties>
             <Property name="MNM_shadowPixels" type="int" value="10"/>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
