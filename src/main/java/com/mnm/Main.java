@@ -8,6 +8,7 @@ import com.mnm.view.frame.Example;
 public class Main {
     
     public Main() {
+        new Prueba();
         new Example().setVisible(true);
     }
     

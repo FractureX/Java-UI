@@ -31,6 +31,7 @@ public class RoundedJTextField extends JTextField {
     private Color MNM_borderInactiveColor = new Color(215, 221, 230);
     private String MNM_placeholder = "Placeholder";
     private Color MNM_placeholderForeground = new Color(215, 221, 230);
+    private Color MNM_foreground = new Color(51, 51, 51);
     
     private Timer timerFocus;
     private Color borderCurrentColor = new Color(215, 221, 230);
@@ -63,7 +64,7 @@ public class RoundedJTextField extends JTextField {
                     timerFocus.start();
                     if (getForeground() == MNM_placeholderForeground) {
                         setText("");
-                        setForeground(MNM_placeholderForeground);
+                        setForeground(MNM_foreground);
                     }
                 }
             }
@@ -256,6 +257,14 @@ public class RoundedJTextField extends JTextField {
 
     public void setMNM_placeholderForeground(Color MNM_placeholderForeground) {
         this.MNM_placeholderForeground = MNM_placeholderForeground;
+    }
+
+    public Color getMNM_foreground() {
+        return MNM_foreground;
+    }
+
+    public void setMNM_foreground(Color MNM_foreground) {
+        this.MNM_foreground = MNM_foreground;
     }
     
 }

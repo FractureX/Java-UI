@@ -4,6 +4,7 @@
 package com.mnm.form.view.stepper1;
 
 import com.mnm.view.component.RoundedJPanel;
+import com.mnm.view.component.notification1.Notification;
 import java.awt.Cursor;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -46,7 +47,8 @@ public class Stepper extends RoundedJPanel {
             currentStep = stepsInfoPanel.doStep(StepsInfoPanel.doStep.next);
             setStep(currentStep);
         } else {
-            JOptionPane.showMessageDialog(null, "Form finalizado : ]");
+            Notification.showNotification(Notification.NotificationType.Success, "Título", "Espero que este sea un mensaje muy largo porque quiero ver el comportamiento");
+            //JOptionPane.showMessageDialog(null, "Form finalizado : ]");
         }
     }
     

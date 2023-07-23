@@ -19,9 +19,14 @@ public class RoundedJLabel extends JLabel {
         Top,
         Left,
         Bottom,
-        Right
+        Right,
+        Center
     }
     
+    private boolean MNM_borderShow = true;
+    private Color MNM_borderActiveColor = new Color(255, 255, 255);
+    private Color MNM_borderInactiveColor = new Color(255, 255, 255);
+    private boolean MNM_backgroundShow = true;
     private Color MNM_backgroundActiveColor = new Color(255, 255, 255);
     private Color MNM_backgroundInactiveColor = new Color(255, 255, 255);
     private int MNM_labelArc = 10;
@@ -48,12 +53,22 @@ public class RoundedJLabel extends JLabel {
     protected void paintComponent(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        if (isEnabled()) {
-            g2d.setColor(MNM_backgroundActiveColor);
-        } else {
-            g2d.setColor(MNM_backgroundInactiveColor);
+        if (MNM_backgroundShow) {
+            if (isEnabled()) {
+                g2d.setColor(MNM_backgroundActiveColor);
+            } else {
+                g2d.setColor(MNM_backgroundInactiveColor);
+            }
+            g2d.fillRoundRect(0, 0, getWidth(), getHeight(), MNM_labelArc, MNM_labelArc);
         }
-        g2d.fillRoundRect(0, 0, getWidth(), getHeight(), MNM_labelArc, MNM_labelArc);
+        if (MNM_borderShow) {
+            if (isEnabled()) {
+                g2d.setColor(MNM_borderActiveColor);
+            } else {
+                g2d.setColor(MNM_borderInactiveColor);
+            }
+            g2d.drawRoundRect(0, 0, getWidth() - 1, getHeight() - 1, MNM_labelArc, MNM_labelArc);
+        }
         if (imageIcon != null) {
             int xIcon = 0;
             int yIcon = 0;
@@ -68,6 +83,9 @@ public class RoundedJLabel extends JLabel {
             } else if (MNM_iconPosition == iconPosition.Right) {
                 xIcon = getWidth() - imageIcon.getIconWidth()- MNM_iconMargin;
                 yIcon = (getHeight() / 2) - (imageIcon.getIconHeight() / 2);
+            } else if (MNM_iconPosition == iconPosition.Center) {
+                xIcon = (getWidth() / 2) - (imageIcon.getIconWidth() / 2);
+                yIcon = (getHeight()/ 2) - (imageIcon.getIconHeight()/ 2);
             }
             g2d.drawImage(imageIcon.getImage(), xIcon, yIcon, null);
         }
@@ -135,6 +153,38 @@ public class RoundedJLabel extends JLabel {
     public void setMNM_icon(Icon MNM_icon) {
         this.MNM_icon = MNM_icon;
         verifyImageSize();
+    }
+    
+    public boolean isMNM_backgroundShow() {
+        return MNM_backgroundShow;
+    }
+
+    public void setMNM_backgroundShow(boolean MNM_backgroundShow) {
+        this.MNM_backgroundShow = MNM_backgroundShow;
+    }
+    
+    public boolean isMNM_borderShow() {
+        return MNM_borderShow;
+    }
+
+    public void setMNM_borderShow(boolean MNM_borderShow) {
+        this.MNM_borderShow = MNM_borderShow;
+    }
+
+    public Color getMNM_borderActiveColor() {
+        return MNM_borderActiveColor;
+    }
+
+    public void setMNM_borderActiveColor(Color MNM_borderActiveColor) {
+        this.MNM_borderActiveColor = MNM_borderActiveColor;
+    }
+
+    public Color getMNM_borderInactiveColor() {
+        return MNM_borderInactiveColor;
+    }
+
+    public void setMNM_borderInactiveColor(Color MNM_borderInactiveColor) {
+        this.MNM_borderInactiveColor = MNM_borderInactiveColor;
     }
     
 }
